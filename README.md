@@ -12,10 +12,8 @@ http://3b42413a84.goho.co/loginWeb/login.html（查看项目预览）
 
 ![avatar](http://www.liurui13.cn/img/sql.png)
 
-### 三、实操录屏
-![avatar](http://www.liurui13.cn/video/javaweb.mp4)
 
-### 四、部分解释
+### 三、部分解释
 
 1. 项目设置了拦截器，检测用户登录状态
 2. 主页部分未要求超链接（如论坛等），自己随意加了超链接
