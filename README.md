@@ -19,6 +19,6 @@ http://3b42413a84.goho.co/loginWeb/login.html   （查看项目预览）
 2. 主页部分未要求超链接（如论坛等），自己随意加了超链接
 3. 项目启动状态是默认80端口映射路径/loginWeb
 4. 首页未做变更
-5. 为更生动形象展现，进行了http端口映射，可直接访问http://3b42413a84.goho.co/loginWeb/login.html查看
+5. 为更生动形象展现，进行了http端口映射，可直接访问http://3b42413a84.goho.co/loginWeb/login.html  查看
 6. 因为端口映射的局限性如电脑关机或IDE杀死进程则无法访问（可联系我打开后查看）
 
