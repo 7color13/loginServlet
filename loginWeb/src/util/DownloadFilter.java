@@ -21,11 +21,11 @@ public class DownloadFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse)servletResponse;
         String userName = (String) request.getSession().getAttribute("username");
         if (userName==null||userName.equals("")){
-            request.setAttribute("msg", "未登录，请重新登录");
-            PrintWriter pw = response.getWriter();
-            pw.write("未登录，请重新登录");
             //request.getRequestDispatcher("login.html").forward(servletRequest, servletResponse);
-            response.sendRedirect("login.html");
+            request.setCharacterEncoding("UTf-8");
+            response.setCharacterEncoding("UTF-8");
+            request.setAttribute("msg","抱歉，您必须先登录才能访问该资源");
+            request.getRequestDispatcher("error.jsp").forward(request,response);
             return;
         }
         filterChain.doFilter(servletRequest, servletResponse);
