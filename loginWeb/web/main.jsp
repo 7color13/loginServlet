@@ -15,7 +15,7 @@
 <img src="file/mainHead.png" alt="1">
 <span class="user">欢迎您：<%=session.getAttribute("username") %> <a onclick="window.location.href='login.html'">【安全退出】</a></span>
 <ul>
-    <li><a href="main.html">首页</a></li>
+    <li><a href="main.jsp">首页</a></li>
     <li>|</li>
     <li><a href="getDownloadList.do">下载</a></li>
     <li>|</li>
