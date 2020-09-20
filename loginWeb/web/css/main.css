@@ -1,0 +1,22 @@
+ul {
+    width: 400px;
+    margin: -20px 1100px;
+    list-style: none;
+    position: relative;
+    font-size: 22px
+}
+
+li {
+    display: inline-block;
+    *display: inline-block;
+    *zoom: 1;
+}
+
+a{
+    text-decoration: none;
+}
+.main{
+    margin-top: 10%;
+    margin-left: 10%;
+    width: 80%;
+}
