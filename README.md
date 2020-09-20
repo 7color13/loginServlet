@@ -1,6 +1,6 @@
 # login Servlet
 
-http://3b42413a84.goho.co/loginWeb/login.html（查看项目预览）
+http://3b42413a84.goho.co/loginWeb/login.html   （查看项目预览）
 
 ### 一、文件目录
 
