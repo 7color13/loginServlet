@@ -10,7 +10,6 @@
 <head>
     <title>主页</title>
     <link rel="stylesheet" href="css/main.css">
-    <script type="text/javascript" src="js/main.js"></script>
 </head>
 <body>
 <img src="file/mainHead.png" alt="1">
