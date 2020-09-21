@@ -13,7 +13,7 @@
 </head>
 <body>
 <img src="file/mainHead.png" alt="1">
-<span class="user">欢迎您：<%=session.getAttribute("username") %> <a onclick="window.location.href='login.html'">【安全退出】</a></span>
+<span class="user">欢迎您：<%=session.getAttribute("username") %> <a href="servlet/Invalidate">【安全退出】</a></span>
 <ul>
     <li><a href="main.jsp">首页</a></li>
     <li>|</li>
