@@ -20,5 +20,8 @@ http://47.110.70.107:8080/login.html  （查看项目预览）
 3. 项目启动状态是默认80端口映射路径/loginWeb
 4. 首页未做变更
 5. 为更生动形象展现，进行了http端口映射，可直接访问http://47.110.70.107:8080/login.html  查看
+6. 下载功能在Windows端正常
 
+![avatar](http://www.liurui13.cn/img/download.png)
+在服务器端文件名有下划线
 
