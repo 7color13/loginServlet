@@ -1,6 +1,6 @@
 # login Servlet
 
-http://47.110.70.107:8080/login.html  （查看项目预览username:admin,password:123456）
+http://www.liurui13.cn:8080/login.html  （查看项目预览username:admin,password:123456）
 
 ### 一、文件目录
 
