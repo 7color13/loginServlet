@@ -40,18 +40,24 @@ public class LoginController extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         String verifyCode = request.getParameter("userCode");
         PrintWriter pw = response.getWriter();
-
+        User user1 = null;
         try {
-            if (userDao.selectOne(user) == 1 && verifyCode.equals(vCode)) {
+            user1 = userDao.selectOne(user);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+            if (user1.getPassword()!=null && verifyCode.equals(vCode)) {
                 //response.sendRedirect("success.html");
                 session.setAttribute("username", username);
+                session.setAttribute("chrName",user1.getChrName());
                 response.sendRedirect("main.jsp");
             } else {
                 String message = "";
-                if (userDao.selectOne(user) == 3) {
+                if (user1.getUsername()==null) {
                     message += "抱歉，您输入的用户名不存在";
                 }
-                if (userDao.selectOne(user) == 2) {
+                if (user1.getUsername()!=null) {
                     message += "抱歉，您输入的密码不正确";
                 }
                 if (!verifyCode.equals(vCode)) {
@@ -60,8 +66,5 @@ public class LoginController extends HttpServlet {
                 request.setAttribute("msg",message);
                 request.getRequestDispatcher("error.jsp").forward(request,response);
             }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
     }
 }
