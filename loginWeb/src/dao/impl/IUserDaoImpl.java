@@ -15,7 +15,8 @@ public class IUserDaoImpl implements IUserDao {
         this.con=con;
     }
     @Override
-    public int selectOne(User user) throws Exception{
+    public User selectOne(User user) throws Exception{
+        User user1 =new User() ;
         String sql = "select * from t_user where username = ?";
         this.pst = this.con.prepareStatement(sql);
         this.pst.setString(1,user.getUsername());
@@ -23,10 +24,12 @@ public class IUserDaoImpl implements IUserDao {
         if (rs.next()){
             String password = rs.getString("password");
             if (password.equals(user.getPassword())) {
-                return 1;
+                user1 = new User(rs.getString("username"), rs.getString("password"), rs.getString("chrName"), rs.getString("role"));
             }
-            return 2;
+            else {
+                user1.setUsername(user.getUsername());
+            }
         }
-        return 3;
+       return user1;
     }
 }
