@@ -40,6 +40,8 @@ public class GetDownloadListController extends HttpServlet {
             resp.sendRedirect("download.jsp");
         } catch (Exception e) {
             e.printStackTrace();
+        }finally{
+            con.close();
         }
     }
 
