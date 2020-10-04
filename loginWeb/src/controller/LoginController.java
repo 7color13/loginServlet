@@ -45,6 +45,8 @@ public class LoginController extends HttpServlet {
             user1 = userDao.selectOne(user);
         } catch (Exception e) {
             e.printStackTrace();
+        }finnaly{
+            con.close();
         }
 
             if (user1.getPassword()!=null && verifyCode.equals(vCode)) {
