@@ -10,6 +10,8 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <html>
 <head>
     <title>下载</title>
@@ -18,54 +20,31 @@
 <script type="text/javascript" src="js/download.js"></script>
 <body>
 
-<%
-    Date d = new Date();
-    SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-    String now = df.format(d);
-%>
 
-<%
-    List<Download> downloadList = (List<Download>)session.getAttribute("dList");
-    for(int i = 0; i < downloadList.size(); i++) {
-        Download download = (Download) downloadList.get(i);
-%>
-<%--<tr>
-    <td><%=download.getId() %></td>
-    <td><%=download.getName() %></td>
-    <td><%=download.getPath() %></td>
-    <td><%=download.getDescription() %></td>
-    <td><%=download.getSize() %></td>
-    <td><%=download.getStar() %></td>
-    <td><%=download.getImage() %></td>
-</tr>--%>
 <div class="box">
-<img src="<%=download.getImage() %>" alt="1" class="flag">
-<div class="name"><%=download.getName() %></div>
+<c:forEach items="${sessionScope.dList}"  var="download" varStatus="vs" >
+    <img src="${download.image}" alt="1" class="flag">
+<div class="name">${download.name}</div>
 <br>
-<span class="size">大小: <%=download.getSize() %></span>
-    <span>&nbsp;&nbsp;&nbsp;&nbsp;时间：<%=now %></span>
+<span class="size">大小: ${download.size}</span>
+
+    <span>&nbsp;&nbsp;&nbsp;&nbsp;时间：</span>
 <span>&nbsp;&nbsp;&nbsp;星级：</span>
-   <%
-    for(int j=0;j<download.getStar() ;j++){
-    %>
-    <img src="file/brightStar.png" alt="亮星星" class="star">
-    <%
-    }
-   %>
-    <%
-        for(int j=0;j<5-download.getStar() ;j++){
-    %>
-    <img src="file/darkStar.png" alt="暗星星" class="star">
-    <%
-        }
-    %>
-    <input type="button" value="立即下载" onclick="downloadDoc('<%=download.getPath()%>')"/>
+
+    <c:forEach var="brightStar" begin="1" end="${download.star}">
+        <img src="file/brightStar.png" alt="亮星星" class="star">
+    </c:forEach>
+
+    <c:forEach  var="darkstar" begin="1" end="${5-download.star}" step="1">
+        <img src="file/darkStar.png" alt="暗星星" class="star">
+    </c:forEach>
+
+    <input type="button" value="立即下载" onclick="downloadDoc('${download.path}')"/>
     <br>
-<span class="description"><%=download.getDescription() %></span>
+<span class="description">${download.description}</span>
 <hr/>
+</c:forEach>
 </div>
-<%
-    }
-%>
+
 </body>
 </html>
